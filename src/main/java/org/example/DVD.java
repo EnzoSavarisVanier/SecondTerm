@@ -1,4 +1,4 @@
 package org.example;
 
-public class DVD {
+public class DVD extends Item{
 }

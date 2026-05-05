@@ -1,4 +1,4 @@
 package org.example;
 
-public class Magazine {
+public class Magazine extends Item{
 }
