@@ -16,7 +16,7 @@ public abstract class User {
     public abstract int getBorrowLimit();
 
     public void borrowItem(Item item) throws Exception {
-        if (borrowedItems.size() == getBorrowLimit()) {
+        if (borrowedItems.size() >= getBorrowLimit()) {
             throw new Exception("Borrow limit reached");
         }
         if (item.getStatus() != Item.Status.IN_STORE) {
