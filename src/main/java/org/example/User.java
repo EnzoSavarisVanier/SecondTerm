@@ -1,6 +1,10 @@
 package org.example;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+
+import static org.example.Library.items;
 
 public abstract class User {
     protected String id;
@@ -32,5 +36,27 @@ public abstract class User {
     public void returnItem(Item item) {
         borrowedItems.remove(item);
         item.setStatus(Item.Status.IN_STORE);
+    }
+
+    public Optional<Item> searchItemStream(String title) {
+        return items.stream()
+                .filter(item -> Objects.equals(item.getTitle(), title))
+                .findFirst();
+    }
+
+    public Optional<Item> searchItemRecursive(String title) {
+        return searchItemRecursiveHelper(title, 0);
+    }
+
+    private Optional<Item> searchItemRecursiveHelper(String title, int index) {
+        if (index >= items.size()) {
+            return Optional.empty();
+        }
+
+        if (items.get(index).getTitle().equals(title)) {
+            return Optional.ofNullable(items.get(index));
+        }
+
+        return searchItemRecursiveHelper(title, index + 1);
     }
 }

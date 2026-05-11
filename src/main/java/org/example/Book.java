@@ -7,7 +7,7 @@ public class Book extends Item {
 
     public Book(String id, String title, String isbn, String author, String genre) {
         super(id, title);
-        if (!(isbn.length() == 13)) {
+        if (!(isbn.matches("\\d{13}"))) {
             throw new IllegalArgumentException("Invalid ISBN");
         }
         this.isbn = isbn;
