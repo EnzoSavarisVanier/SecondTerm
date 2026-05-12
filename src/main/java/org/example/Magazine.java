@@ -9,4 +9,14 @@ public class Magazine extends Item {
         this.issueNumber = issueNumber;
         this.publisher = publisher;
     }
+
+    @Override
+    public String toString() {
+        return "Magazine{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", issueNumber=" + issueNumber +
+                '}';
+    }
 }

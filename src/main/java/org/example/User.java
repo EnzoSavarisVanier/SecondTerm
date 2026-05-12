@@ -1,11 +1,9 @@
 package org.example;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
+import lombok.*;
+import java.util.*;
 import static org.example.Library.items;
 
+@Getter
 public abstract class User {
     protected String id;
     protected String name;

@@ -9,4 +9,14 @@ public class DVD extends Item {
         this.director = director;
         this.duration = duration;
     }
+
+    @Override
+    public String toString() {
+        return "DVD{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", director='" + director + '\'' +
+                ", duration=" + duration +
+                '}';
+    }
 }

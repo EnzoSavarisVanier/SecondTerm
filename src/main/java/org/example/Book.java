@@ -14,4 +14,15 @@ public class Book extends Item {
         this.author = author;
         this.genre = genre;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", genre='" + genre + '\'' +
+                ", isbn=" + isbn +
+                '}';
+    }
 }
