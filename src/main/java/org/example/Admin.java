@@ -16,14 +16,17 @@ public class Admin extends User implements Reportable {
 
     @Override
     public void generateReport() {
+        System.out.println("BORROWED ITEMS");
         items.stream()
                 .filter(item -> item.getStatus() == Item.Status.BORROWED)
                 .forEach(System.out::println);
 
+        System.out.println("IN STORE ITEMS");
         items.stream()
                 .filter(item -> item.getStatus() == Item.Status.IN_STORE)
                 .forEach(System.out::println);
 
+        System.out.println("LOST ITEMS");
         items.stream()
                 .filter(item -> item.getStatus() == Item.Status.LOST)
                 .forEach(System.out::println);
