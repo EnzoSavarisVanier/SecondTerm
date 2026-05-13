@@ -1,5 +1,7 @@
 package org.example;
+import lombok.Getter;
 
+@Getter
 public class Magazine extends Item {
     private int issueNumber;
     private String publisher;

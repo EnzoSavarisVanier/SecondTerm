@@ -1,5 +1,7 @@
 package org.example;
+import lombok.Getter;
 
+@Getter
 public class DVD extends Item {
     private String director;
     private int duration;
